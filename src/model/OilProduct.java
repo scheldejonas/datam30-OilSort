@@ -9,7 +9,7 @@ package model;
  *
  * @author scheldejonas
  */
-public class OilProduct {
+public class OilProduct implements Comparable<OilProduct> {
     
     private String name;
     private int price;
@@ -48,6 +48,26 @@ public class OilProduct {
     @Override
     public String toString() {
         return "OilProduct{" + "name=" + name + ", price=" + price + ", amount=" + amount + '}';
+    }
+
+    @Override
+    public int compareTo(OilProduct other) {
+        if (equals(other)) {
+            return 0;
+        }
+        int CompResult = this.name.compareTo(other.getName());
+        if (CompResult == 0) {
+            if (this.amount < other.getAmount()) {
+                return 1;
+            }
+            else if (this.amount > other.getAmount()) {
+                return -1;
+            }
+            else {
+                return 0;
+            }
+        }
+        return CompResult;
     }
 
 }

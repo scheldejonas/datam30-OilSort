@@ -28,6 +28,7 @@ public class OilCompanyManagement {
         OilProduct op8 = new OilProduct("Oil8", 70, 20);
         OilProduct op9 = new OilProduct("Oil9", 80, 20);
         OilProduct op10 = new OilProduct("Oil10", 90, 10);
+        OilProduct op11 = new OilProduct("Oil10", 90, 20);
         
         ArrayList<OilProduct> oilList = new ArrayList();
         oilList.add(op1);
@@ -37,9 +38,11 @@ public class OilCompanyManagement {
         oilList.add(op7);
         oilList.add(op5);
         oilList.add(op6);
+        oilList.add(op11);
         oilList.add(op10);
         oilList.add(op8);
         oilList.add(op9);
+        oilList.add(op11);
         
         for (OilProduct oilProduct : oilList) {
             System.out.println(oilProduct.toString());
@@ -68,6 +71,14 @@ public class OilCompanyManagement {
         System.out.println("__________________________________________________");
         
         Collections.sort(oilList, sortByAmount); //Sort efter navn
+        
+        for (OilProduct oilProduct : oilList) {
+            System.out.println(oilProduct.toString());
+        }
+        
+        System.out.println("__________________________________________________");
+        
+        Collections.sort(oilList); //Sort efter navn
         
         for (OilProduct oilProduct : oilList) {
             System.out.println(oilProduct.toString());
